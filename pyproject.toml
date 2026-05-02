@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cheap-stocks"
+version = "0.1.0"
+description = "Perfect-hindsight monthly filter for cheap stocks"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "yfinance>=0.2.40",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0.0",
+]
+
+[project.scripts]
+cheap-stocks = "cheap_stocks.main:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
